@@ -1,7 +1,13 @@
 import pygame
+import requests
 
 #window parameters
 Width = 550
+
+#calling API
+response = requests.get("https://sugoku.herokuapp.com/board?difficulty=easy")
+grid = response.json()['board']
+grid_original = [[grid[x][y] for y in range(len(grid[0]))] for x in range(len(grid))]
 
 #colors
 back_ground_color = (255,255,255)
