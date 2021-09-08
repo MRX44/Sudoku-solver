@@ -4,6 +4,8 @@ import requests
 #window parameters
 Width = 550
 
+#levels = [easy,medium,hard]
+
 #calling API
 response = requests.get("https://sugoku.herokuapp.com/board?difficulty=easy")
 grid = response.json()['board']
